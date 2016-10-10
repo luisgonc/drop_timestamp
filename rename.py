@@ -36,13 +36,16 @@ if __name__ == '__main__':
 
     TIME_STAMP = bf_year + bf_month + bf_mday + bf_hour + bf_min    # This will be addressed later -
 
-    # Refactor the file name with the time stamp
-    if '.' in SOURCE_FNAME:
-        EXTENSION = SOURCE_FNAME.split('.')[-1]
-        DEST_FNAME = SOURCE_FNAME.split('.' + EXTENSION)[0] + '_' + TIME_STAMP + '_' + '.' + EXTENSION
-    else:
-        DEST_FNAME = SOURCE_FNAME + TIME_STAMP
+    ## Refactor the file name with the time stamp before the extension
+    #if '.' in SOURCE_FNAME:
+    #    EXTENSION = SOURCE_FNAME.split('.')[-1]
+    #    DEST_FNAME = SOURCE_FNAME.split('.' + EXTENSION)[0] + '_' + TIME_STAMP + '_' + '.' + EXTENSION
+    #else:
+    #    DEST_FNAME = SOURCE_FNAME + TIME_STAMP
     
+    ## Refactor the file name with the time stamp in the beginning
+    DEST_FNAME = TIME_STAMP + '_' + SOURCE_FNAME;
+
     #print "\n\n"
     #print BASE
     #print SOURCE_DIR
